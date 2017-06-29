@@ -57,6 +57,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="cQz-e9-FLK" id="VjR-7d-Yfy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,31 +77,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-ty-u7j">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-ty-u7j">
                                 <rect key="frame" x="163" y="84" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
                                     <action selector="recordTapped:" destination="Om3-t0-VVJ" eventType="touchUpInside" id="dA6-JF-YwQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwq-yD-fWq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwq-yD-fWq">
                                 <rect key="frame" x="172" y="134" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playTapped:" destination="Om3-t0-VVJ" eventType="touchUpInside" id="1vA-Bh-RCv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sound Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQ1-pJ-ZzW">
-                                <rect key="frame" x="112.5" y="184" width="150" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="7uG-xU-LI0"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sound Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQ1-pJ-ZzW">
+                                <rect key="frame" x="135.5" y="184" width="150" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEO-rV-RKQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEO-rV-RKQ">
                                 <rect key="frame" x="172" y="234" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
@@ -108,13 +107,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iQ1-pJ-ZzW" firstAttribute="top" secondItem="Zwq-yD-fWq" secondAttribute="bottom" constant="20" id="3ad-pI-J9e"/>
-                            <constraint firstItem="iQ1-pJ-ZzW" firstAttribute="centerX" secondItem="UR2-BJ-rQK" secondAttribute="centerX" id="5tW-ij-jQq"/>
-                            <constraint firstItem="lEO-rV-RKQ" firstAttribute="top" secondItem="iQ1-pJ-ZzW" secondAttribute="bottom" constant="20" id="Bm2-Ug-Gco"/>
+                            <constraint firstItem="Zwq-yD-fWq" firstAttribute="centerX" secondItem="UR2-BJ-rQK" secondAttribute="centerX" id="2a4-8S-85q"/>
+                            <constraint firstItem="cyA-ty-u7j" firstAttribute="centerX" secondItem="UR2-BJ-rQK" secondAttribute="centerX" id="2wu-um-yvm"/>
+                            <constraint firstItem="Zwq-yD-fWq" firstAttribute="top" secondItem="cyA-ty-u7j" secondAttribute="bottom" constant="20" id="BZx-IM-A74"/>
+                            <constraint firstItem="lEO-rV-RKQ" firstAttribute="top" secondItem="iQ1-pJ-ZzW" secondAttribute="bottom" constant="20" id="dBa-Gd-4u6"/>
+                            <constraint firstItem="lEO-rV-RKQ" firstAttribute="centerX" secondItem="UR2-BJ-rQK" secondAttribute="centerX" id="iEd-7j-71P"/>
+                            <constraint firstItem="iQ1-pJ-ZzW" firstAttribute="top" secondItem="Zwq-yD-fWq" secondAttribute="bottom" constant="20" id="ln1-FK-0kQ"/>
+                            <constraint firstItem="iQ1-pJ-ZzW" firstAttribute="centerX" secondItem="UR2-BJ-rQK" secondAttribute="centerX" id="qIv-up-YMQ"/>
+                            <constraint firstItem="cyA-ty-u7j" firstAttribute="top" secondItem="Rmz-qC-tzM" secondAttribute="bottom" constant="20" id="yNQ-lN-Hj2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="lEO-rV-RKQ" id="ktG-47-YUR"/>
                         <outlet property="nameText" destination="iQ1-pJ-ZzW" id="NaS-Zs-Vpi"/>
+                        <outlet property="playButton" destination="Zwq-yD-fWq" id="tCt-Vp-sY1"/>
                         <outlet property="recordButton" destination="cyA-ty-u7j" id="MBx-Q5-4cm"/>
                     </connections>
                 </viewController>
