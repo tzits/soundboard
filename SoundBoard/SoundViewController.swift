@@ -61,7 +61,6 @@ class SoundViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         setUpRecorder()
         playButton.isEnabled = false
         addButton.isHidden = true
